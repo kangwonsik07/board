@@ -2,6 +2,7 @@ import { TextField, Button, Container, Typography, CircularProgress } from '@mui
 import { useCallback, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { registerUserThunk } from '../features/authSlice'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
    const [email, setEmail] = useState('')
@@ -65,6 +66,9 @@ const Home = () => {
          <Button variant="contained" color="primary" onClick={handleSignup} fullWidth disabled={loading} style={{ marginTop: '20px' }}>
             {loading ? <CircularProgress size={24} /> : '회원가입'}
          </Button>
+         <p>
+            <Link to="/Login">로그인</Link>
+         </p>
       </Container>
    )
 }
